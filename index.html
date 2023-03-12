@@ -7,9 +7,10 @@
     <link href="https://fonts.cdnfonts.com/css/the-laguna" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/vtcsundaykomixtall"
       rel="stylesheet">
-      <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
 
     <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/94c5ccf883.js" crossorigin="anonymous"></script>
     <title>Hadi Portfolio</title>
   </head>
   <body>
@@ -59,15 +60,28 @@
               accusantium facere, molestiae dolore aspernatur!</p>
 
             <div class="tab-titles">
-              <p class="tab-links active-link">Skills</p>
-              <p class="tab-links">Experiences</p>
-              <p class="tab-links">Education</p>
+              <p class="tab-links active-link" onclick="tabsClick('skills')">Skills</p>
+              <p class="tab-links" onclick="tabsClick('experiences')">Experiences</p>
+              <p class="tab-links" onclick="tabsClick('education')">Education</p>
             </div>
-            <div class="tab-contents">
+            <div class="tab-contents active-contents" id="skills">
               <ul>
                 <li> <span>web development</span><br>this is test</li>
                 <li> <span>web development</span><br>this is test</li>
                 <li> <span>web development</span><br>this is test</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experiences">
+              <ul>
+                <li> <span>MehrabTech</span><br>this is test</li>
+                <li> <span>Showay</span><br>this is test</li>
+                <li> <span>Freelancer</span><br>this is test</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li> <span>Software Engineering</span><br>Golbahar University
+                  2018</li>
               </ul>
             </div>
 
@@ -76,5 +90,59 @@
       </div>
     </div>
 
+
+    <!-- -----------------services------------ -->
+
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">
+          My services
+        </h1>
+        <div class="servicelist">
+          <div>
+            <i class="fa-sharp fa-solid fa-code"></i>
+            <h2>web dev</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repudiandae, consectetur illo ducimus ipsam similique asperiores?</p>
+            <a href="#">Learn more</a>
+          </div>
+
+          <div>
+            <i class="fa-sharp fa-solid fa-futbol"></i>
+            <h2>UI</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repudiandae, consectetur illo ducimus ipsam similique asperiores?</p>
+            <a href="#">Learn more</a>
+          </div>
+
+          <div>
+            <i class="fa-sharp fa-solid fa-mobile-screen"></i>
+            <h2>Android</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repudiandae, consectetur illo ducimus ipsam similique asperiores?</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      var tablinks = document.getElementsByClassName('tab-links');
+      var tabcontents = document.getElementsByClassName('tab-contents');
+
+
+      function tabsClick (tabName) {
+        for(tablink of tablinks){
+          tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+          tabcontent.classList.remove("active-contents");
+        }
+        event.currentTarget.classList.add('active-link');
+        document.getElementById(tabName).classList.add('active-contents');
+        }
+      
+    </script>
   </body>
 </html>
